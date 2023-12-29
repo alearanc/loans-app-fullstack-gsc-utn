@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{ actionTitle }} persona</h1>
+<div mat-dialog-content>
+  <form [formGroup]="personForm">
+    <mat-grid-list cols="1" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre completo</mat-label>
+            <input matInput formControlName="name" autocomplete="off">
+          </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Teléfono</mat-label>
+            <input matInput formControlName="phoneNumber" autocomplete="off">
+          </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Correo electrónico</mat-label>
+            <input matInput formControlName="emailAddress" autocomplete="off">
+          </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Regresar</button>
+  <button mat-raised-button color="primary" (click)="addEditPerson()" [disabled]="personForm.invalid">{{actionButton}}</button>
+</div>
